@@ -4,11 +4,12 @@ import Contact from './Pages/Contact'
 import SignIn from './Pages/SignIn'
 import SignUp from './Pages/SignUp'
 import Home from './Pages/Home'
-
+import Header from './Components/Header'
 function App() {
   return (
     <>
       <div>
+          <Header/>
           <h1>Movies_Website</h1>
           <Routes>
             <Route path="/" element={<Home/>}/>
