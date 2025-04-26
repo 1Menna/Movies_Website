@@ -5,6 +5,7 @@ import SignIn from './Pages/SignIn'
 import SignUp from './Pages/SignUp'
 import Home from './Pages/Home'
 import Header from './Components/Header'
+import Footer from './Components/Footer'
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/Contact" element={<Contact/>}/>
           </Routes>
       </div>
+      <Footer/>
     </>
   )
 }
