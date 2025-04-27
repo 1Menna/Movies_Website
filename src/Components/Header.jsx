@@ -36,12 +36,13 @@ const Header = () => {
         <label className="input flex me-5">
           <input type="search" required placeholder="Search Movies" />
         </label>
-        <Button className='bg-neutral-content me-1' variant="outlined">
-          <Link to='/SignUp' className="hover:text-info">SignUp</Link>
-        </Button>
-        <Button className='bg-neutral-content me-1' variant="outlined">
-          <Link to='/SignIn' className="hover:text-info">SignIn</Link>
-        </Button>
+        <Link to='/SignUp' className="hover:text-info">
+        <Button className='bg-neutral-content me-1' variant="outlined">SignUp</Button>
+        </Link>
+        
+        <Link to='/SignIn' className="hover:text-info">
+        <Button className='bg-neutral-content me-1' variant="outlined">SignIn</Button>
+        </Link>
       </div>
     </div>
   );
