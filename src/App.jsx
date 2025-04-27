@@ -13,7 +13,6 @@ function App() {
     <>
       <div>
           <Header/>
-          <h1>Movies_Website</h1>
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/SignUp" element={<SignUp/>}/>
