@@ -11,12 +11,12 @@ import {
 const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <Card color="transparent" shadow={false} className="w-full max-w-md">
+      <Card color="white" shadow={true} className="w-full max-w-md p-8">
         <Typography variant="h4" color="blue-gray" className="text-center">
           Sign In
         </Typography>
         <Typography color="gray" className="mt-1 font-normal text-center">
-          Nice to meet you again! Enter your details to Sign In.
+          Nice to meet you! Enter your details to Sign In.
         </Typography>
         <form className="mt-8 mb-2">
           <div className="mb-1 flex flex-col gap-6">
@@ -48,7 +48,7 @@ const SignUp = () => {
             Sign In
           </Button>
           <Typography color="gray" className="mt-4 text-center font-normal">
-            Not have Account?{" "}
+            Already have an account?{" "}
             <Link to="/SignUp" className="font-medium text-gray-900">
               Sign Up
             </Link>

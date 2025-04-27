@@ -10,8 +10,8 @@ import {
 
 const SignUp = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <Card color="transparent" shadow={false} className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center p-4 ">
+      <Card color="white" shadow={true} className="w-full max-w-md p-8">
         <Typography variant="h4" color="blue-gray" className="text-center">
           Sign Up
         </Typography>
