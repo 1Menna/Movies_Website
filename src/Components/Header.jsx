@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'  
 
 const Header = () => {
   return (
@@ -12,9 +13,9 @@ const Header = () => {
             </svg>
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow bg-neutral text-neutral-content">
-            <li><a className="hover:text-info">Home</a></li>
-            <li><a className="hover:text-info">Series</a></li>
-            <li><a className="hover:text-info">Movies</a></li>
+          <li><Link to="./" className="hover:text-info">Home</Link></li>
+          <li><Link to="./Movies" className="hover:text-info">Movies</Link></li>
+          <li><Link to="./Series" className="hover:text-info">Series</Link></li>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl text-neutral-content">WATCH</a>
@@ -23,9 +24,9 @@ const Header = () => {
       {/* Desktop Menu (Hidden on mobile) */}
       <div className="navbar-center hidden lg:flex text-neutral-content">
         <ul className="menu menu-horizontal px-1">
-          <li><a className="hover:text-info">Home</a></li>
-          <li><a className="hover:text-info">Movies</a></li>
-          <li><a className="hover:text-info">Series</a></li>
+          <li><Link to="./" className="hover:text-info">Home</Link></li>
+          <li><Link to="./Movies" className="hover:text-info">Movies</Link></li>
+          <li><Link to="./Series" className="hover:text-info">Series</Link></li>
         </ul>
       </div>
 
