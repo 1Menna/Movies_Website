@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'  
+import { Button } from "@material-tailwind/react";
 
 const Header = () => {
   return (
@@ -32,9 +33,15 @@ const Header = () => {
 
       {/* Search Bar */}
       <div className="navbar-end">
-        <label className="input flex">
+        <label className="input flex me-5">
           <input type="search" required placeholder="Search Movies" />
         </label>
+        <Button className='bg-neutral-content me-1' variant="outlined">
+          <Link to='/SignUp' className="hover:text-info">SignUp</Link>
+        </Button>
+        <Button className='bg-neutral-content me-1' variant="outlined">
+          <Link to='/SignIn' className="hover:text-info">SignIn</Link>
+        </Button>
       </div>
     </div>
   );
