@@ -50,13 +50,14 @@ const Home = () => {
     <div>
       <Carousel className="m-5rounded-xl">
         {topSeries.map((show) => (
-           <div key={show.id} className="p-2 aspect-[2/3] w-44"> 
+           <div key={show.id} className="p-2 aspect-[2/3] w-56"> 
            <img
              src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
              alt={show.name || show.title}
             className="w-56 h-full object-cover rounded-lg"
            />
           </div>
+          
         ))}
       </Carousel>
       
