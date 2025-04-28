@@ -7,44 +7,46 @@ const Home = () => {
   const [topMovies, setTopMovies] = useState([]); 
   const [topSeries, setTopSeries] = useState([]); 
   const [loading, setLoading] = useState(true);
-  const [moviesError, setMoviesError] = useState(null);
-  const [seriesError, setSeriesError] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZWQxZTUyY2E1MTI4MWJkNmU1YjBmMTIyZmJmYjQ1ZCIsIm5iZiI6MTc0NTc3ODM4NS43ODIsInN1YiI6IjY4MGU3NmQxM2M3MThlOGM1NTM4MDYwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PsrBzXMtzkJG0pskxZb0gDVBd9f6O8QAFETLP-1jUNg'
-        }
-      };
-
-      try {
-        // Fetch movies
-        const moviesResponse = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options);
-        const moviesData = await moviesResponse.json();
-        if (moviesData.results) setTopMovies(moviesData.results);
-
-        // Fetch series
-        const seriesResponse = await fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options);
-        const seriesData = await seriesResponse.json();
-        if (seriesData.results) setTopSeries(seriesData.results);
-
-      } catch (err) {
-        console.error(err);
-        setMoviesError(err);
-        setSeriesError(err);
-      } finally {
-        setLoading(false);
+    const options = {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZWQxZTUyY2E1MTI4MWJkNmU1YjBmMTIyZmJmYjQ1ZCIsIm5iZiI6MTc0NTc3ODM4NS43ODIsInN1YiI6IjY4MGU3NmQxM2M3MThlOGM1NTM4MDYwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PsrBzXMtzkJG0pskxZb0gDVBd9f6O8QAFETLP-1jUNg'
       }
-    };
-
-    fetchData();
-  }, []);
-
+    };      
+    fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
+      .then(res => res.json())
+      .then(data => {
+        if (data.results) {
+          setTopMovies(data.results);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+          console.error(err);
+          setError(err);
+          setLoading(false);
+      });
+      fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options)
+      .then(res => res.json())
+      .then(data => {
+        if (data.results) {
+        setTopSeries(data.results);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+          console.error(err);
+          setError(err);
+          setLoading(false);
+      });
+      }, []);
+           
   if (loading) return <div>Loading...</div>;
-  if (moviesError || seriesError) return <div>Error loading data</div>;
+  if (error) return <div>Error loading data</div>;
 
   return (
     <div>
