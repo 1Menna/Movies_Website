@@ -11,7 +11,7 @@ import Footer from './Components/Footer'
 function App() {
   return (
     <>
-      <div className="bg-neutral ">
+      <div className="bg-neutral text-neutral-content">
           <Header/>
           <Routes>
             <Route path="/" element={<Home/>}/>

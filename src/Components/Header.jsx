@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'  
 import { Button } from "@material-tailwind/react";
+import { BiSolidCameraMovie } from "react-icons/bi";
 
 const Header = () => {
   return (
@@ -19,7 +20,7 @@ const Header = () => {
           <li><Link to="./Series" className="hover:text-info">Series</Link></li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-neutral-content">WATCH</a>
+        <a className="btn btn-ghost text-xl text-neutral-content"><BiSolidCameraMovie className='text-4xl' /> WATCH</a>
       </div>
 
       {/* Desktop Menu (Hidden on mobile) */}
