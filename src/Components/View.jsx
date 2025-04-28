@@ -10,8 +10,8 @@ import {
   
 const View = ({Show}) => {
   return (
-    <div>
-    <Card className="m-5 max-w-[290px] min-w-[300px] rounded-none">
+    <div className="group relative">
+    <Card className="m-5 max-w-[290px] min-w-[300px] rounded-none group-hover:opacity-50 transition-opacity duration-400">
       <CardHeader floated={false} className="h-96 m-0 rounded-none"> {/* Added rounded-none here */}
         <img 
           src={`https://media.themoviedb.org/t/p/w440_and_h660_face${Show.poster_path}`}
