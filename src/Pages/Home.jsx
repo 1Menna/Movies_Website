@@ -55,50 +55,84 @@ const Home = () => {
     <div>
     {/*========================================================================*/}
     <h1 className='my-5 text-center text-4xl'>TOP Movies</h1>
-      <div className="px-12 py-4 relative">
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={20}
-        slidesPerView={5}
-        navigation
-        loop
-      >
-        {topMovies.map((show) => (
-          <SwiperSlide key={show.id}>
-            <div className="p-2 aspect-[2/3] w-64">
-              <img
-                src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
-                alt={show.name || show.title}
-                className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-4 relative">
+  <Swiper
+    modules={[Navigation]}
+    spaceBetween={10}
+    slidesPerView={2}
+    navigation
+    loop
+    breakpoints={{
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 15
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 15
+      },
+      // when window width is >= 1024px
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 20
+      }
+    }}
+  >
+    {topMovies.map((show) => (
+      <SwiperSlide key={show.id}>
+        <div className=" aspect-[2/3] w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px] lg:max-w-[250px] xl:max-w-none">
+          <img
+            src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
+            alt={show.name || show.title}
+            className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
     {/*========================================================================*/}
     <h1 className='my-5 text-center text-4xl'>TOP Series</h1>
-      <div className="px-12 py-4 relative">
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={20}
-        slidesPerView={5}
-        navigation
-        loop
-      >
-        {topSeries.map((show) => (
-          <SwiperSlide key={show.id}>
-            <div className="p-2 aspect-[2/3] w-64">
-              <img
-                src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
-                alt={show.name || show.title}
-                className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-4 relative">
+  <Swiper
+    modules={[Navigation]}
+    spaceBetween={10}
+    slidesPerView={2}
+    navigation
+    loop
+    breakpoints={{
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 15
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 15
+      },
+      // when window width is >= 1024px
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 20
+      }
+    }}
+  >
+    {topSeries.map((show) => (
+      <SwiperSlide key={show.id}>
+        <div className="p-1 sm:p-2 aspect-[2/3] w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px] lg:max-w-[250px] xl:max-w-none">
+          <img
+            src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
+            alt={show.name || show.title}
+            className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
     {/*========================================================================*/}
     
     {/*========================================================================*/}
