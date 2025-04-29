@@ -1,7 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import View from '../Components/View'; // Make sure to import your View component
-import { Carousel } from "@material-tailwind/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]); 
@@ -50,27 +53,55 @@ const Home = () => {
 
   return (
     <div>
-      <Carousel className="m-5rounded-xl">
-        {topSeries.map((show) => (
-           <div key={show.id} className="p-2 aspect-[2/3] w-64 "> 
-           <img
-             src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
-             alt={show.name || show.title}
-            className="w-56 h-full object-cover rounded-lg"
-           />
-          </div>
-          
+    {/*========================================================================*/}
+    <h1 className='my-5 text-center text-4xl'>TOP Movies</h1>
+      <div className="px-12 py-4 relative">
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={5}
+        navigation
+        loop
+      >
+        {topMovies.map((show) => (
+          <SwiperSlide key={show.id}>
+            <div className="p-2 aspect-[2/3] w-64">
+              <img
+                src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
+                alt={show.name || show.title}
+                className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </SwiperSlide>
         ))}
-      </Carousel>
-      
-      <div>  
-        <h1 className='my-5 text-center text-4xl'>TOP SERIES</h1>
-        <div className="flex justify-evenly flex-wrap">
-          {topSeries.map((Show) => (
-            <View key={Show.id} Show={Show} />
-          ))}
-        </div>
-      </div>
+      </Swiper>
+    </div>
+    {/*========================================================================*/}
+    <h1 className='my-5 text-center text-4xl'>TOP Series</h1>
+      <div className="px-12 py-4 relative">
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={5}
+        navigation
+        loop
+      >
+        {topSeries.map((show) => (
+          <SwiperSlide key={show.id}>
+            <div className="p-2 aspect-[2/3] w-64">
+              <img
+                src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
+                alt={show.name || show.title}
+                className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+    {/*========================================================================*/}
+    
+    {/*========================================================================*/}
     </div>
   );
 }
