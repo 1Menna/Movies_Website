@@ -7,8 +7,13 @@ import {
     Typography,
     Button,
 } from "@material-tailwind/react";
+import { useNavigate } from 'react-router-dom';
   
-const View = ({Show}) => {
+const View = ({id,Show}) => {
+  const navigate = useNavigate();
+  const GoToDetails = () => {
+    navigate('/Details', { state: { id: id } });
+  }
   return (
     <div className="group relative">
     <Card className="m-5 max-w-[290px] min-w-[300px] rounded-none group-hover:opacity-50 transition-opacity duration-400">
@@ -25,7 +30,7 @@ const View = ({Show}) => {
         </Typography>
       </CardBody>
       <CardFooter className="flex justify-center pt-5 bg-neutral-content rounded-none"> {/* Added rounded-none */}
-        <Button variant="outlined" size="sm" className="text-xs rounded-none"> {/* Added rounded-none */}
+        <Button variant="outlined" size="sm" className="text-xs rounded-none" onClick={()=>GoToDetails(id)}> {/* Added rounded-none */}
           Details
         </Button>
       </CardFooter>
