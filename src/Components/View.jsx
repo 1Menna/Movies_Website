@@ -9,10 +9,10 @@ import {
 } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom';
   
-const View = ({id,Show}) => {
+const View = ({type,id,Show}) => {
   const navigate = useNavigate();
   const GoToDetails = () => {
-    navigate('/Details', { state: { id: id } });
+    navigate('/Details', { state: { id: id, type:type } });
   }
   return (
     <div className="group relative">

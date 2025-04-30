@@ -45,7 +45,7 @@ const Movies = () => {
             <h1 className='text-center text-4xl mt-4'>MOVIES</h1>
             <div className="flex justify-evenly flex-wrap">
                 {movies.map((Show) => (
-                    <View key={Show.id} id={Show.id} Show={Show} />
+                    <View key={Show.id} type={1} id={Show.id} Show={Show} />
                 ))}
             </div>
         </div>

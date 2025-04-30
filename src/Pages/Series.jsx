@@ -46,7 +46,7 @@ const Series = () => {
             <h1 className='text-center text-4xl mt-4'>SERIES</h1>
             <div className="flex justify-evenly flex-wrap">
                 {Series.map((Show) => (
-                    <View key={Show.id} Show={Show} />
+                    <View key={Show.id} type={2} id={Show.id} Show={Show} />
                 ))}
             </div>
         </div>
