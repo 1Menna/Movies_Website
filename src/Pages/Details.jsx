@@ -47,7 +47,7 @@ const Details = () => {
           )
         if (error) return <div>Error loading movies</div>; 
   return (
-    <div className="flex flex-col md:flex-row gap-8 p-4 max-w-6xl mx-auto m-5">
+    <div className="flex flex-col md:flex-row gap-8 p-4 max-w-6xl mx-auto">
     {/* Movie Poster - Fixed width, centered */}
     <div className="w-full md:w-1/3 lg:w-1/4 flex justify-center">
       <img
