@@ -31,11 +31,13 @@ const Movies = () => {
     }, []);
 
     if (loading) return (
-    <>
-    <div className='text-center'>Loading...</div>
-    <Spinner className="h-16 w-16 text-gray-900/50" />;
-    </>
-    )
+        <div className='w-screen bg-neutral'>
+          <div className='flex flex-col items-center justify-center min-h-screen'>
+            <div className='text-center mb-4'>Loading...</div>
+            <Spinner className="h-16 w-16 text-blue-gray-100/50" />
+          </div>
+        </div>
+      )
     if (error) return <div>Error loading movies</div>;
 
     return (

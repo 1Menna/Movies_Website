@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import View from '../Components/View';
+import { Spinner } from "@material-tailwind/react";
 
 const Series = () => {
     const [Series, setSeries] = useState([]); 
@@ -30,7 +31,14 @@ const Series = () => {
             });
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return (
+        <div className='w-screen bg-neutral'>
+          <div className='flex flex-col items-center justify-center min-h-screen'>
+            <div className='text-center mb-4'>Loading...</div>
+            <Spinner className="h-16 w-16 text-blue-gray-100/50" />
+          </div>
+        </div>
+      )
     if (error) return <div>Error loading movies</div>;
 
     return (

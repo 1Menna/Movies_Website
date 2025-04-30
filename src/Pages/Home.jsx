@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { Spinner } from "@material-tailwind/react";
 
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]); 
@@ -48,7 +49,14 @@ const Home = () => {
       });
       }, []);
            
-  if (loading) return <div>Loading...</div>;
+      if (loading) return (
+        <div className='w-screen bg-neutral'>
+          <div className='flex flex-col items-center justify-center min-h-screen'>
+            <div className='text-center mb-4'>Loading...</div>
+            <Spinner className="h-16 w-16 text-blue-gray-100/50" />
+          </div>
+        </div>
+      )
   if (error) return <div>Error loading data</div>;
 
   return (
