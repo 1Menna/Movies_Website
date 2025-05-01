@@ -73,30 +73,24 @@ const Home = () => {
     breakpoints={{
       // when window width is >= 640px
       640: {
-        slidesPerView: 3,
-        spaceBetween: 15
+        slidesPerView: 2,
+        spaceBetween: 25
       },
       // when window width is >= 768px
       768: {
-        slidesPerView: 4,
-        spaceBetween: 15
+        slidesPerView: 3,
+        spaceBetween: 25
       },
       // when window width is >= 1024px
       1024: {
-        slidesPerView: 5,
-        spaceBetween: 20
+        slidesPerView: 4,
+        spaceBetween: 70
       }
     }}
   >
-    {topMovies.map((show) => (
-      <SwiperSlide key={show.id}>
-        <div className=" aspect-[2/3] w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px] lg:max-w-[250px] xl:max-w-none">
-          <img
-            src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
-            alt={show.name || show.title}
-            className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+    {topMovies.map((Show) => (
+      <SwiperSlide key={Show.id}>
+         <View key={Show.id} type={1} id={Show.id} Show={Show} />
       </SwiperSlide>
     ))}
   </Swiper>
@@ -113,30 +107,24 @@ const Home = () => {
     breakpoints={{
       // when window width is >= 640px
       640: {
-        slidesPerView: 3,
-        spaceBetween: 15
+        slidesPerView: 2,
+        spaceBetween: 25
       },
       // when window width is >= 768px
       768: {
-        slidesPerView: 4,
-        spaceBetween: 15
+        slidesPerView: 3,
+        spaceBetween: 25
       },
       // when window width is >= 1024px
       1024: {
-        slidesPerView: 5,
-        spaceBetween: 20
+        slidesPerView: 4,
+        spaceBetween: 70
       }
     }}
   >
-    {topSeries.map((show) => (
-      <SwiperSlide key={show.id}>
-        <div className="p-1 sm:p-2 aspect-[2/3] w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px] lg:max-w-[250px] xl:max-w-none">
-          <img
-            src={`https://media.themoviedb.org/t/p/w440_and_h660_face${show.poster_path}`}
-            alt={show.name || show.title}
-            className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+    {topSeries.map((Show) => (
+      <SwiperSlide key={Show.id}>
+        <View key={Show.id} type={2} id={Show.id} Show={Show} />
       </SwiperSlide>
     ))}
   </Swiper>
