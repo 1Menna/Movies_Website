@@ -57,6 +57,16 @@ const Header = () => {
           </svg>
         </label>
       </div>
+
+      <div>
+        <Link to='/SignUp' className="hover:text-info">
+            <Button className='bg-neutral-content me-1' variant="outlined">SignUp</Button>
+        </Link>
+        
+        <Link to='/SignIn' className="hover:text-info">
+            <Button className='bg-neutral-content me-1' variant="outlined">SignIn</Button>
+        </Link>
+      </div>
     </div>
   );
 };
