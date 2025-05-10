@@ -5,7 +5,7 @@ import { BiSolidCameraMovie } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <div className="navbar bg-neutral shadow-sm">
+    <div className="navbar bg-black shadow-sm">
       {/* Mobile Menu (Dropdown) */}
       <div className="navbar-start">
         <div className="dropdown">

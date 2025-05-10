@@ -6,6 +6,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { Spinner } from "@material-tailwind/react";
+import { Link } from 'react-router-dom';
+import { Button } from "@material-tailwind/react";
 
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]); 
@@ -71,9 +73,26 @@ const Home = () => {
   if (error) return <div>Error loading data</div>;
 
   return (
-    <div className="pb-10">
-      
-      
+    <div className="pb-10 bg-gradient-to-b bg-black text-white min-h-screen">
+      {/* Hero Section with Watch Now Button */}
+      <div className="relative h-screen flex items-center justify-center">
+         {/* Background image with gradient overlay */}
+          <div className="absolute inset-0">
+              <div className="absolute inset-0 bg-[url('./public/home.jpg')] bg-cover bg-center"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+          </div>
+          {/* Content */}
+          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+                  Unlimited Movies, TV Shows and More
+             </h1>
+             <Link to='/SignUp' 
+             className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                  Watch Now
+             </Link>
+          </div>
+      </div>
+      {/*=========================================================================*/}
       {/* Top Movies Section */}
       <div className="mt-10">
         <h1 className='my-5 text-center text-4xl'>TOP Movies</h1>
@@ -99,7 +118,7 @@ const Home = () => {
           </Swiper>
         </div>
       </div>
-      
+      {/*=========================================================================*/}
       {/* Top Series Section */}
       <div className="mt-10">
         <h1 className='my-5 text-center text-4xl'>TOP Series</h1>
@@ -125,6 +144,7 @@ const Home = () => {
           </Swiper>
         </div>
       </div>
+      {/*=========================================================================*/}
     </div>
   );
 }
