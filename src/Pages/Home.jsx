@@ -86,9 +86,10 @@ const Home = () => {
             loop
             breakpoints={{
               // 1 slide on mobile (default)
-              640: { slidesPerView: 2, spaceBetween: 25 }, // 2 slides on sm
-              768: { slidesPerView: 3, spaceBetween: 25 }, // 3 slides on md
-              1024: { slidesPerView: 4, spaceBetween: 70 }, // 4 slides on lg
+              640: { slidesPerView: 2, spaceBetween: 30 },  
+              840: { slidesPerView: 2, spaceBetween: 35 },  
+              900: { slidesPerView: 3, spaceBetween: 10 },  
+              1024: { slidesPerView: 4, spaceBetween: 80 },
             }}
           >
             {topMovies.map((Show) => (
@@ -112,9 +113,10 @@ const Home = () => {
             loop
             breakpoints={{
               // 1 slide on mobile (default)
-              640: { slidesPerView: 2, spaceBetween: 25 }, // 2 slides on sm
-              768: { slidesPerView: 3, spaceBetween: 25 }, // 3 slides on md
-              1024: { slidesPerView: 4, spaceBetween: 70 }, // 4 slides on lg
+              640: { slidesPerView: 2, spaceBetween: 30 },  
+              840: { slidesPerView: 2, spaceBetween: 35 },  
+              900: { slidesPerView: 3, spaceBetween: 10 },  
+              1024: { slidesPerView: 4, spaceBetween: 80 },  
             }}
           >
             {topSeries.map((Show) => (
