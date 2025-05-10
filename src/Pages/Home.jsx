@@ -78,10 +78,7 @@ const Home = () => {
       <div className="relative h-screen flex items-center justify-center">
          {/* Background image with gradient overlay */}
           <div className="absolute inset-0">
-              <div 
-      className="absolute inset-0 bg-cover bg-center"
-      style={{ backgroundImage: "url('/home.jpg')" }}
-    ></div>
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/home.jpg')" }}></div>
              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
           </div>
           {/* Content */}
