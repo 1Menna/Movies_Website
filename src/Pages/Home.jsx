@@ -12,6 +12,7 @@ import { Button } from "@material-tailwind/react";
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]); 
   const [topSeries, setTopSeries] = useState([]); 
+  const [movies, setMovies] = useState([]); 
   const [featuredContent, setFeaturedContent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,7 +25,7 @@ const Home = () => {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZWQxZTUyY2E1MTI4MWJkNmU1YjBmMTIyZmJmYjQ1ZCIsIm5iZiI6MTc0NTc3ODM4NS43ODIsInN1YiI6IjY4MGU3NmQxM2M3MThlOGM1NTM4MDYwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PsrBzXMtzkJG0pskxZb0gDVBd9f6O8QAFETLP-1jUNg'
       }
     };      
-    
+    //====================================================================================
     // Fetch popular movies
     fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
       .then(res => res.json())
@@ -44,7 +45,7 @@ const Home = () => {
           console.error(err);
           setError(err);
       });
-      
+    //==================================================================================== 
     // Fetch top rated series
     fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options)
       .then(res => res.json())
@@ -59,6 +60,22 @@ const Home = () => {
           setError(err);
           setLoading(false);
       });
+    //====================================================================================
+    // Fetch 
+    fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
+            .then(res => res.json())
+            .then(data => {
+                if (data.results) {
+                    setMovies(data.results);
+                }
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error(err);
+                setError(err);
+                setLoading(false);
+            });
+
   }, []);
            
   if (loading) return (
@@ -145,6 +162,15 @@ const Home = () => {
         </div>
       </div>
       {/*=========================================================================*/}
+      <div>  
+            <h1 className='my-5 text-center text-4xl mt-4'>Recommendations</h1>
+            <div className="flex justify-evenly flex-wrap">
+                {movies.map((Show) => (
+                    <View key={Show.id} type={1} id={Show.id} Show={Show} />
+                ))}
+            </div>
+        </div>
+      {/*=========================================================================*/}  
     </div>
   );
 }
