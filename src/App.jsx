@@ -12,7 +12,7 @@ import Footer from './Components/Footer'
 function App() {
   return (
     <>
-      <div className="bg-neutral text-neutral-content">
+      <div className="bg-black text-neutral-content">
           <Header/>
           <Routes>
             <Route path="/" element={<Home/>}/>

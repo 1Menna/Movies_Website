@@ -66,7 +66,7 @@ const Details = () => {
     }
     
         if (loading) return (
-            <div className='w-screen bg-neutral'>
+            <div className='w-screen bg-black'>
               <div className='flex flex-col items-center justify-center min-h-screen'>
                 <div className='text-center mb-4'>Loading...</div>
                 <Spinner className="h-16 w-16 text-blue-gray-100/50" />
