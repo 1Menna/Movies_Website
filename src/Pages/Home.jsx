@@ -78,16 +78,17 @@ const Home = () => {
       <div className="mt-10">
         <h1 className='my-5 text-center text-4xl'>TOP Movies</h1>
         <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-4 relative">
-          <Swiper
+            <Swiper
             modules={[Navigation]}
             spaceBetween={10}
-            slidesPerView={2}
+            slidesPerView={1} 
             navigation
             loop
             breakpoints={{
-              640: { slidesPerView: 2, spaceBetween: 25 },
-              768: { slidesPerView: 3, spaceBetween: 25 },
-              1024: { slidesPerView: 4, spaceBetween: 70 }
+              // 1 slide on mobile (default)
+              640: { slidesPerView: 2, spaceBetween: 25 }, // 2 slides on sm
+              768: { slidesPerView: 3, spaceBetween: 25 }, // 3 slides on md
+              1024: { slidesPerView: 4, spaceBetween: 70 }, // 4 slides on lg
             }}
           >
             {topMovies.map((Show) => (
@@ -106,13 +107,14 @@ const Home = () => {
           <Swiper
             modules={[Navigation]}
             spaceBetween={10}
-            slidesPerView={2}
+            slidesPerView={1} 
             navigation
             loop
             breakpoints={{
-              640: { slidesPerView: 2, spaceBetween: 25 },
-              768: { slidesPerView: 3, spaceBetween: 25 },
-              1024: { slidesPerView: 4, spaceBetween: 70 }
+              // 1 slide on mobile (default)
+              640: { slidesPerView: 2, spaceBetween: 25 }, // 2 slides on sm
+              768: { slidesPerView: 3, spaceBetween: 25 }, // 3 slides on md
+              1024: { slidesPerView: 4, spaceBetween: 70 }, // 4 slides on lg
             }}
           >
             {topSeries.map((Show) => (
