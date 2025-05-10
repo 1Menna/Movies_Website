@@ -45,7 +45,7 @@ const Header = () => {
 
       {/* Search Bar (Visible only on desktop) */}
       <div className="navbar-end hidden lg:flex">
-        <label className="input input-bordered flex items-center gap-2 me-5">
+        <label className="input input-bordered flex items-center gap-2 me-5 text-red-400">
           <input 
             type="search" 
             className="grow" 
@@ -60,11 +60,11 @@ const Header = () => {
 
       <div>
         <Link to='/SignUp' className="hover:text-info">
-            <Button className='bg-black-content me-1' variant="outlined">SignUp</Button>
+            <Button className='bg-neutral-content me-1' variant="outlined">SignUp</Button>
         </Link>
         
         <Link to='/SignIn' className="hover:text-info">
-            <Button className='bg-black-content me-1' variant="outlined">SignIn</Button>
+            <Button className='bg-neutral-content me-1' variant="outlined">SignIn</Button>
         </Link>
       </div>
     </div>
