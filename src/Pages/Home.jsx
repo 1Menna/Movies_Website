@@ -85,22 +85,22 @@ const Home = () => {
   return (
     <div className="min-h-screen pb-10 text-white bg-black bg-gradient-to-b">
       {/* Hero Section with Watch Now Button */}
-      <div className="relative flex items-center justify-center h-screen">
-         {/* Background image with gradient overlay */}
-          <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: "url('/home.jpg')" }}></div>
-             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
-          </div>
-          {/* Content */}
-          <div className="relative z-10 max-w-4xl px-4 mx-auto text-center">
-             <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl drop-shadow-lg">
-                  Unlimited Movies, TV Shows and More
-             </h1>
-             <Link to='/SignUp' 
-             className="inline-block px-8 py-3 text-lg font-bold text-white transition duration-300 transform bg-red-600 rounded-lg shadow-lg hover:bg-red-700 hover:scale-105">
-                  Watch Now
-             </Link>
-          </div>
+      <div className="relative h-screen flex items-center justify-center">
+           {/* Background image with gradient overlay */}
+            <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/home.jpg')" }}></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+            </div>
+            {/* Content */}
+            <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                 <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+                      Unlimited Movies, TV Shows and More
+                 </h1>
+                 <Link to='/SignUp' 
+                 className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                      Watch Now
+                 </Link>
+            </div>
       </div>
       {/*=========================================================================*/}
       {/* Top Movies Section */}
