@@ -32,13 +32,6 @@ const Home = () => {
       .then(data => {
         if (data.results) {
           setTopMovies(data.results);
-          // Set the first movie as featured content if not already set
-          if (!featuredContent && data.results.length > 0) {
-            setFeaturedContent({
-              ...data.results[0],
-              type: 'movie'
-            });
-          }
         }
       })
       .catch(err => {
