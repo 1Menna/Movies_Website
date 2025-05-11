@@ -86,21 +86,21 @@ const Home = () => {
     <div className="pb-10 bg-gradient-to-b bg-black text-white min-h-screen">
       {/* Hero Section with Watch Now Button */}
       <div className="relative h-screen flex items-center justify-center">
-         {/* Background image with gradient overlay */}
-          <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/home.jpg')" }}></div>
-             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
-          </div>
-          {/* Content */}
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
-                  Unlimited Movies, TV Shows and More
-             </h1>
-             <Link to='/SignUp' 
-             className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                  Watch Now
-             </Link>
-          </div>
+           {/* Background image with gradient overlay */}
+            <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/home.jpg')" }}></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+            </div>
+            {/* Content */}
+            <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                 <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+                      Unlimited Movies, TV Shows and More
+                 </h1>
+                 <Link to='/SignUp' 
+                 className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                      Watch Now
+                 </Link>
+            </div>
       </div>
       {/*=========================================================================*/}
       {/* Top Movies Section */}
