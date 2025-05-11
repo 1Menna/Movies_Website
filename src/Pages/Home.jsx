@@ -79,8 +79,25 @@ const Home = () => {
       </div>
     </div>
   );
+  if (error) return (
+    <div className='w-screen bg-black'>
+      <div className='flex flex-col items-center justify-center min-h-screen gap-4 text-center'>
+        <ExclamationCircleIcon className="w-16 h-16 text-red-500" />
+        <h2 className='text-xl font-medium text-white'>Failed to Load Movies</h2>
+        <p className='text-blue-gray-100/70 max-w-md px-4'>
+          {error.message || "Please check your connection and try again."}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-4 px-6 py-2 bg-red-600 hover:bg-red-700 rounded-md text-white transition-colors"
+        >
+          Retry
+        </button>
+      </div>
+    </div>
+  );
 
-  if (error) return <div>Error loading data</div>;
+  // if (error) return <div>Error loading data</div>;
 
   return (
     <div className="min-h-screen pb-10 text-white bg-black bg-gradient-to-b">
