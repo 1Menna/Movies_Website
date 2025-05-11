@@ -33,7 +33,7 @@ const Signup = () => {
         if (result.data.token) {
           localStorage.setItem("token", result.data.token);
         }
-        navigate("/signIn");
+        navigate("/Login");
       })
       .catch((err) => {
         console.error("Signup error:", err.response?.data || err.message);
