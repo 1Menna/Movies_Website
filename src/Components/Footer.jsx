@@ -7,7 +7,7 @@ import { BiSolidCameraMovie } from "react-icons/bi";
 const currentYear = new Date().getFullYear();
 const Footer = () => {
   return (
-    <footer className="pt-6 bg-neutral-content text-neutral relative w-full"> {/* Reduced from pt-8 to pt-6 */}
+    <footer className="pt-6 bg-black-content text-neutral relative w-full"> {/* Reduced from pt-8 to pt-6 */}
     <div className="mx-auto w-full max-w-7xl px-6"> {/* Reduced padding from px-8 to px-6 */}
         <div className="grid grid-cols-1 justify-between gap-3 md:grid-cols-2"> {/* Reduced gap from gap-4 to gap-3 */}
             <Typography variant="h5" className="text-2xl mb-2 flex items-center gap-1"> {/* Reduced text-3xl to text-2xl and gap-2 to gap-1 */}

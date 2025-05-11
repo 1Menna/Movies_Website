@@ -24,12 +24,12 @@ const View = ({type,id,Show}) => {
           className="h-full w-full object-cover rounded-none" 
         />
       </CardHeader>
-      <CardBody className="bg-neutral-content text-center p-0"> {/* Removed padding */}
+      <CardBody className="bg-black-content text-center p-0"> {/* Removed padding */}
         <Typography variant="h6" className="text-2xl truncate px-2 pt-1"> {/* Added individual padding */}
         {Show.title}
         </Typography>
       </CardBody>
-      <CardFooter className="flex justify-center pt-5 bg-neutral-content rounded-none"> {/* Added rounded-none */}
+      <CardFooter className="flex justify-center pt-5 bg-black-content rounded-none"> {/* Added rounded-none */}
         <Button variant="outlined" size="sm" className="text-xs rounded-none" onClick={()=>GoToDetails(id)}> {/* Added rounded-none */}
           Details
         </Button>

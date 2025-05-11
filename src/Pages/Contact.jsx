@@ -9,7 +9,7 @@ import {
 
 const Contact = () => {
   return (
-    <div className="text-neutral-content min-h-screen flex items-center justify-center p-4">
+    <div className="text-neutral-content min-h-screen flex items-center justify-center p-4 bg-black">
       <Card color="white" shadow={true} className="w-full max-w-md p-8">
         <Typography variant="h4" color="blue-gray" className="text-center">
           Contact Us
@@ -38,7 +38,7 @@ const Contact = () => {
               />
             </div>
           </div>
-          <Button className="bg-neutral mt-6" fullWidth>
+          <Button className="bg-black mt-6" fullWidth>
             Send Message
           </Button>
         </form>

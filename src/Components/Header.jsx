@@ -5,7 +5,7 @@ import { BiSolidCameraMovie } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <div className="navbar bg-neutral shadow-sm">
+    <div className="navbar bg-black shadow-sm">
       {/* Mobile Menu (Dropdown) */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -14,7 +14,7 @@ const Header = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-neutral rounded-box w-52 text-neutral-content">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52 text-neutral-content">
             <li>
               <div className="form-control">
                 <input 
@@ -45,7 +45,7 @@ const Header = () => {
 
       {/* Search Bar (Visible only on desktop) */}
       <div className="navbar-end hidden lg:flex">
-        <label className="input input-bordered flex items-center gap-2 me-5">
+        <label className="input input-bordered flex items-center gap-2 me-5 text-red-400">
           <input 
             type="search" 
             className="grow" 
@@ -56,6 +56,16 @@ const Header = () => {
             <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
           </svg>
         </label>
+      </div>
+
+      <div>
+        <Link to='/SignUp' className="hover:text-info">
+            <Button className='bg-neutral-content me-1' variant="outlined">SignUp</Button>
+        </Link>
+        
+        <Link to='/SignIn' className="hover:text-info">
+            <Button className='bg-neutral-content me-1' variant="outlined">SignIn</Button>
+        </Link>
       </div>
     </div>
   );
