@@ -13,7 +13,7 @@ const Home = () => {
   const [topMovies, setTopMovies] = useState([]); 
   const [topSeries, setTopSeries] = useState([]); 
   const [movies, setMovies] = useState([]); 
-  const [featuredContent, setFeaturedContent] = useState(null);
+  // const [featuredContent, setFeaturedContent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -74,8 +74,8 @@ const Home = () => {
   if (loading) return (
     <div className='w-screen bg-black'>
       <div className='flex flex-col items-center justify-center min-h-screen'>
-        <div className='text-center mb-4'>Loading...</div>
-        <Spinner className="h-16 w-16 text-blue-gray-100/50" />
+        <div className='mb-4 text-center'>Loading...</div>
+        <Spinner className="w-16 h-16 text-blue-gray-100/50" />
       </div>
     </div>
   );
@@ -83,21 +83,21 @@ const Home = () => {
   if (error) return <div>Error loading data</div>;
 
   return (
-    <div className="pb-10 bg-gradient-to-b bg-black text-white min-h-screen">
+    <div className="min-h-screen pb-10 text-white bg-black bg-gradient-to-b">
       {/* Hero Section with Watch Now Button */}
-      <div className="relative h-screen flex items-center justify-center">
+      <div className="relative flex items-center justify-center h-screen">
          {/* Background image with gradient overlay */}
           <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/home.jpg')" }}></div>
+              <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: "url('/home.jpg')" }}></div>
              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
           </div>
           {/* Content */}
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+          <div className="relative z-10 max-w-4xl px-4 mx-auto text-center">
+             <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl drop-shadow-lg">
                   Unlimited Movies, TV Shows and More
              </h1>
              <Link to='/SignUp' 
-             className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+             className="inline-block px-8 py-3 text-lg font-bold text-white transition duration-300 transform bg-red-600 rounded-lg shadow-lg hover:bg-red-700 hover:scale-105">
                   Watch Now
              </Link>
           </div>
@@ -105,8 +105,8 @@ const Home = () => {
       {/*=========================================================================*/}
       {/* Top Movies Section */}
       <div className="mt-10">
-        <h1 className='my-5 text-center text-4xl'>TOP Movies</h1>
-        <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-4 relative">
+        <h1 className='my-5 text-4xl text-center'>TOP Movies</h1>
+        <div className="relative px-4 py-4 sm:px-6 md:px-8 lg:px-12">
             <Swiper
             modules={[Navigation]}
             spaceBetween={10}
@@ -131,8 +131,8 @@ const Home = () => {
       {/*=========================================================================*/}
       {/* Top Series Section */}
       <div className="mt-10">
-        <h1 className='my-5 text-center text-4xl'>TOP Series</h1>
-        <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-4 relative">
+        <h1 className='my-5 text-4xl text-center'>TOP Series</h1>
+        <div className="relative px-4 py-4 sm:px-6 md:px-8 lg:px-12">
           <Swiper
             modules={[Navigation]}
             spaceBetween={10}
@@ -156,8 +156,8 @@ const Home = () => {
       </div>
       {/*=========================================================================*/}
       <div>  
-            <h1 className='my-5 text-center text-4xl mt-4'>Recommendations</h1>
-            <div className="flex justify-evenly flex-wrap">
+            <h1 className='my-5 mt-4 text-4xl text-center'>Recommendations</h1>
+            <div className="flex flex-wrap justify-evenly">
                 {movies.map((Show) => (
                     <View key={Show.id} type={1} id={Show.id} Show={Show} />
                 ))}
